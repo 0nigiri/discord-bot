@@ -1,5 +1,0 @@
-# ignore all logs
-*.log
-*.env
-*config.json
-/node_modules
