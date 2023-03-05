@@ -25,6 +25,7 @@ module.exports = {
         const mmrAtual = interaction.options.get('mmr-atual').value;
         const mmrDesejado = interaction.options.get('mmr-desejado').value;
         const numberGames = Math.ceil((mmrDesejado - mmrAtual) / 30)
+        const user = interaction.user.username;
         let mmr = mmrAtual;
         let valorSolo = 0;
         let valorParty = 0;
@@ -115,11 +116,14 @@ module.exports = {
 
             valorSolo = Math.ceil(valorSolo);
             valorParty = Math.ceil(valorParty);
+            const channel = client.channels.cache.get('1077768053107982387');
+            channel.send( `${user}, O valor do boost jogando em sua conta é R$ ${valorSolo} e o valor jogando em party é ${valorParty}`);
 
             await interaction.reply({
-                content: `O valor do boost jogando em sua conta é R$ ${valorSolo} e o valor jogando em party é ${valorParty}`,
+                content: `${user}, O valor do boost jogando em sua conta é R$ ${valorSolo} e o valor jogando em party é ${valorParty}`,
                 ephemeral: true,
             });
+
         }
     }
 }

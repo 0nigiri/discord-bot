@@ -19,7 +19,7 @@ module.exports = {
                     value: 5.5,
                 },
                 {
-                    name: 'Cruzader/Cruzado',
+                    name: 'Crusader/Cruzado',
                     value: 6,
                 },
                 {
@@ -71,9 +71,21 @@ module.exports = {
         const beforeRecalibration = interaction.options.get('medalha-antes-do-reset').value;
         const numberGames = interaction.options.get('numero-de-jogos').value;
         const soloPt = interaction.options.get('tipo').value;
+        let tipo;
+        if(soloPt === 1 ){
+             tipo = 'Solo';
+        } else if ( soloPt === 1.8){
+             tipo = 'Party';
 
+        }
+
+        const user = interaction.user.username;
 
         valor = Math.ceil(beforeRecalibration * numberGames * soloPt);
+
+
+        const channel = client.channels.cache.get('1077768053107982387');
+        channel.send( `${user} voce selecionou a opcao em ${tipo}, o valor sera  ${valor}`);
 
 
         await interaction.reply({
