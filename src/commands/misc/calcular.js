@@ -117,7 +117,7 @@ module.exports = {
             valorSolo = Math.ceil(valorSolo);
             valorParty = Math.ceil(valorParty);
             const channel = client.channels.cache.get('1077768053107982387');
-            channel.send( `${user}, O valor do boost jogando em sua conta é R$ ${valorSolo} e o valor jogando em party é ${valorParty}`);
+            channel.send( `${user}, solo ${valorSolo} party ${valorParty} mmr atual ${mmrAtual} mmr desejado ${mmrDesejado}`);
 
             await interaction.reply({
                 content: `${user}, O valor do boost jogando em sua conta é R$ ${valorSolo} e o valor jogando em party é ${valorParty}`,
