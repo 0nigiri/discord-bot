@@ -102,7 +102,7 @@ module.exports = {
                 }
                 if (5001 < mmr && mmr < 5400) {
                     valorSolo += 21.7;
-                    valorParty += 22;
+                    valorParty += 33;
                     continue;
                 }
                 if (5401 < mmr && mmr < 6000) {
