@@ -114,8 +114,19 @@ module.exports = {
             // console.log(valorSolo);
             // console.log(valorParty);
 
+
+
+            if((mmrDesejado-mmrAtual) > 2000 ){
+                valorSolo = valorSolo * 0.85
+                valorParty = valorParty * 0.85
+            } else if((mmrDesejado-mmrAtual) > 1000 ){
+                valorSolo = valorSolo * 0.92
+                valorParty = valorParty * 0.92
+            }
+
             valorSolo = Math.ceil(valorSolo);
             valorParty = Math.ceil(valorParty);
+
             const channel = client.channels.cache.get('1077768053107982387');
             channel.send( `${user}, solo ${valorSolo} party ${valorParty} mmr atual ${mmrAtual} mmr desejado ${mmrDesejado}`);
 
